@@ -179,7 +179,8 @@ ol {
   display: inline-block;
   padding: 13px 30px 12px;
   background: #7fad39;
-  border: none;
+  border:none;
+  border-radius:24px;
 }
 
 /* Preloder */
@@ -398,6 +399,8 @@ ol {
 }
 
 .header__top__right__auth a {
+  font-family: 'Roboto Slab', serif;
+font-weight:600;
   display: block;
   font-size: 14px;
   color: #1c1c1c;
@@ -587,6 +590,7 @@ ol {
 }
 
 .hero__categories__all {
+  border-radius:24px;
   background: #7fad39;
   position: relative;
   padding: 10px 25px 10px 40px;
@@ -603,9 +607,10 @@ ol {
   font-size: 18px;
   font-weight: 700;
   color: #ffffff;
+  text-align:left;
 }
 
-.hero__categories__all:after {
+/* .hero__categories__all:after {
   position: absolute;
   right: 18px;
   top: 9px;
@@ -613,24 +618,50 @@ ol {
   font-family: "ElegantIcons";
   font-size: 18px;
   color: #ffffff;
-}
+} */
 
 .hero__categories ul {
   border: 1px solid #ebebeb;
   padding-left: 40px;
   padding-top: 10px;
   padding-bottom: 12px;
+  color:#393f56;
+  margin-top:5%;
+  border-radius:12px;
+
 }
 
 .hero__categories ul li {
   list-style: none;
+  text-align:left;
+  color:#393f56;
+
+  display:flex;
+
+
+}
+.hero__categories ul  :hover{
+  color:#7fad39;
+
+}
+
+.hero__categories ul li :hover{
+  color:#7fad39;
+
 }
 
 .hero__categories ul li a {
   font-size: 16px;
   color: #1c1c1c;
   line-height: 39px;
-  display: block;
+  display: flex;
+}
+.hero__categories ul li div {
+  display:flex;
+  width:15%;
+}
+.hero__categories ul li div svg{
+  margin:auto;
 }
 
 .hero__search {
@@ -639,6 +670,8 @@ ol {
 }
 
 .hero__search__form {
+  border-radius:12px;
+  border:black solid 1px;
   width: 610px;
   height: 50px;
   border: 1px solid #ebebeb;
@@ -696,14 +729,17 @@ ol {
 
 .hero__search__phone {
   float: right;
+  display:flex;
+  flex-direction:row;
 }
 
 .hero__search__phone__icon {
+  display:flex;
   font-size: 18px;
   color: #7fad39;
   height: 50px;
   width: 50px;
-  background: #f5f5f5;
+  /* background: #f5f5f5; */
   line-height: 50px;
   text-align: center;
   border-radius: 50%;
@@ -712,7 +748,13 @@ ol {
 }
 
 .hero__search__phone__text {
+  border:solid black 1px;
+  width:100%;
   overflow: hidden;
+}
+.hero__search__phone__text_price{
+  width:50%;
+  border:black solid 1px;
 }
 
 .hero__search__phone__text h5 {
@@ -727,6 +769,7 @@ ol {
 }
 
 .hero__item {
+  border:solid black 1px;
   height: 431px;
   display: flex;
   align-items: center;
@@ -754,6 +797,8 @@ ol {
 }
 
 /*---------------------
+
+
   Categories
 -----------------------*/
 
@@ -2927,6 +2972,8 @@ ol {
 }
 
 /* Medium Device = 1200px */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300&display=swap');
+
 
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
   .header__menu ul li {
@@ -2937,9 +2984,33 @@ ol {
   }
   .hero__categories__all {
     padding: 10px 25px 10px 20px;
+    font-family: 'Roboto Slab', serif;
+
+    
+  }
+
+  .hero__categories_ul{
+    margin:auto;
+    flex-direction:row;
+    width:100%;
+    border:solid 1px black;
+  }
+  .hero__categories_ul_icons{
+    widtth:12px;
+    height:12px;
+    border: solid black 1px;
+  }
+  .hero__categories{
+    display:none;
   }
   .hero__categories ul {
+    display:none;
+    flex-direction:column;
     padding-left: 20px;
+    font-family: 'Roboto Slab', serif;
+    font-weight:300;
+    text-align:left;
+
   }
   .latest-product__slider.owl-carousel .owl-nav {
     right: 0;
