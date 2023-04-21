@@ -1,5 +1,20 @@
 
+
+.item-holder{
+    width:25%;
+    height:250px;
+    border:1px solid black;
+    background:#000;
+
+}
+
+
+
+
+
 .featured {
+    display:flex;
+    flex-direction:row;
     padding-top: 80px;
     padding-bottom: 40px;
   }
@@ -8,10 +23,18 @@
     text-align: center;
     margin-bottom: 50px;
   }
-  
+  .hero__item{
+    display:flex;
+    height:100%;
+    width:100%;
+    flex-direction:column;
+    border:1px solid black;
+
+  }
   .featured__controls ul li {
     list-style: none;
     font-size: 18px;
+
     color: #1c1c1c;
     display: inline-block;
     margin-right: 25px;
@@ -19,6 +42,10 @@
     cursor: pointer;
   }
   
+  .item-holder-style{
+    height:100px;
+    display:flex;
+  }
   .featured__controls ul li.active:after {
     opacity: 1;
   }
@@ -39,7 +66,9 @@
   }
   
   .featured__item {
-    margin-bottom: 50px;
+    margin-bottom: 70%;
+    height:150px;
+    width:170px;
   }
   
   .featured__item:hover .featured__item__pic .featured__item__pic__hover {
@@ -47,7 +76,8 @@
   }
   
   .featured__item__pic {
-    height: 270px;
+    height: 200px;
+    
     position: relative;
     overflow: hidden;
     background-position: center center;

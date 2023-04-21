@@ -1,18 +1,15 @@
 import React from "react";
 import "./FeaturedItem.css"
 
-export default function FeaturedItem(props) {
+export default function FeaturedItem({image}) {
   return (
     <div>
       <div className="featured__item">
         <div
           className="featured__item__pic set-bg"
-          style={{
-            backgroundImage:
-              "https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_.jpg",
-          }}
+          
         >
-          <img src="https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_.jpg" />
+          <img src={image}/>
 
           <ul className="featured__item__pic__hover">
             <li>

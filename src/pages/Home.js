@@ -1,5 +1,5 @@
 import React from "react";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 
 import PrimarySearchAppBar from "../components/PrimarySearchAppBar";
@@ -19,10 +19,13 @@ import { BiCookie } from "react-icons/bi";
 import FeaturedItem from "../components/FeaturedItem/FeaturedItem";
 
 export default function Home() {
+  const [dummyData, setdummyData] = useState([]);
+
   useEffect(() => {
     axios.get(`https://fakestoreapi.com/products/`).then((res) => {
       const persons = res.data;
-      console.log(persons);
+      setdummyData(persons);
+      console.log(dummyData);
     });
   }, []);
 
@@ -287,42 +290,21 @@ export default function Home() {
                   <span>All departments</span>
                 </div>
                 <ul>
-                  <li>
-                    <div>
-                      <TbMeat />
-                    </div>
-                    <a href="#">Meats & Seafood</a>
-                  </li>
-                  <li>
-                    <div>
-                      <TbCarrot />
-                    </div>
-                    <a href="#">Grocery</a>
-                  </li>
-                  <li>
-                    <div>
-                      <TbEggs />
-                    </div>
-                    <a href="#">Breakfast & Dairy</a>
-                  </li>
-                  <li>
-                    <div>
-                      <BiCookie />
-                    </div>
-                    <a href="#"> Bakery & Snacks</a>
-                  </li>
-                  <li>
-                    <div>
-                      <TbSnowflake />
-                    </div>
-                    <a href="#">Frozen Foods</a>
-                  </li>
-                  <li>
-                    <div>
-                      <TbApple />
-                    </div>
-                    <a href="#">Fruits & Vegetables</a>
-                  </li>
+                  {[
+                    { id: "1", name: "Meats & Seafood", icon: <TbMeat /> },
+                    { id: "2", name: "Grocery", icon: <TbCarrot /> },
+                    { id: "3", name: "Breakfast & Dairy", icon: <TbEggs /> },
+                    { id: "4", name: "Bakery & Snacks", icon: <BiCookie /> },
+                    { id: "5", name: "Frozen Foods", icon: <TbSnowflake /> },
+                    { id: "6", name: "Fruits & Vegetables", icon: <TbApple/> },
+                  ].map((each) => (
+                    <li key={each.id}>
+                      <div>
+                        {each.icon}
+                      </div>
+                      <a href="#">{each.name}</a>
+                    </li>
+                  ))}
                 </ul>
               </div>
             </div>
@@ -353,11 +335,23 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-              <div
-                className="hero__item set-bg"
-                data-setbg="img/hero/banner.jpg"
-              >
-                <span>Space for content</span>
+              <div className="hero__item set-bg">
+                <div
+                  className="row"
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    border: "1px solid black",
+                  }}
+                >
+                  {dummyData.map((value) => (
+                    <div className="col">
+                      <FeaturedItem image={value.image} />
+                    </div>
+                  ))}
+                </div>
+
+                {/* <span>Space for content</span> */}
 
                 {/* <div className="hero__text">
                   <h2>
@@ -439,7 +433,7 @@ export default function Home() {
       {/* <!-- Categories Section End -->
 
     <!-- Featured Section Begin --> */}
-      <section className="featured spad">
+      {/* <section className="featured spad">
         <div className="container">
           <div className="row">
             <div className="col-lg-12">
@@ -460,10 +454,7 @@ export default function Home() {
             </div>
           </div>
           <div className="row featured__filter">
-            <div className="col-lg-3 col-md-4 col-sm-6 mix oranges fresh-meat">
-             <FeaturedItem/>
-             <FeaturedItem/>
-            </div>
+            <div className="col-lg-3 col-md-4 col-sm-6 mix "></div>
 
             <div className="col-lg-3 col-md-4 col-sm-6 mix fresh-meat vegetables">
               <div className="featured__item">
@@ -531,7 +522,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
       {/* <!-- Featured Section End -->
 
     <!-- Banner Begin --> */}
