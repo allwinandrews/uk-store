@@ -25,7 +25,7 @@ export default function Home() {
     axios.get(`https://fakestoreapi.com/products/`).then((res) => {
       const persons = res.data;
       setdummyData(persons);
-      console.log(dummyData);
+      console.log(dummyData.length);
     });
   }, []);
 
@@ -341,11 +341,11 @@ export default function Home() {
                   style={{
                     width: "100%",
                     height: "100%",
-                    border: "1px solid black",
+                    justifyContent:"center"
                   }}
                 >
                   {dummyData.map((value) => (
-                    <div className="col">
+                    <div className="col-property">
                       <FeaturedItem image={value.image} />
                     </div>
                   ))}

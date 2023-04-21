@@ -562,8 +562,12 @@ font-weight:600;
 /*---------------------
   Hero
 -----------------------*/
+.col-property{
+  position:relative;
+  padding:15px;
+}
 
-.hero {
+hero {
   padding-bottom: 50px;
 }
 
@@ -3133,6 +3137,11 @@ font-weight:600;
 /* Wide Mobile = 480px */
 
 @media only screen and (max-width: 767px) {
+  .col-property{
+    position:relative;
+  
+  }
+  
   .hero__categories {
     margin-bottom: 30px;
   }
