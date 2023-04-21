@@ -562,6 +562,12 @@ font-weight:600;
 /*---------------------
   Hero
 -----------------------*/
+.col-property{
+  position:relative;
+  width:100;
+  padding-left:15px;
+  padding-right:15px;
+}
 
 .hero {
   padding-bottom: 50px;
@@ -769,11 +775,9 @@ font-weight:600;
 }
 
 .hero__item {
-  border:solid black 1px;
   height: 431px;
   display: flex;
   align-items: center;
-  padding-left: 75px;
 }
 
 .hero__text span {
@@ -3252,6 +3256,10 @@ font-weight:600;
 /* Wide Mobile = 480px */
 
 @media only screen and (max-width: 767px) {
+  .col{
+    position:relative;
+    width:100;
+  }
   .hero__categories {
     margin-bottom: 30px;
   }
